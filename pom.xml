@@ -39,38 +39,38 @@
     </modules>
 
 
+    <!--由springboot自带的jar包版本管理的包放在这里-->
     <dependencies>
+        <!--spring中关于web相关的包-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
         </dependency>
+        <!--缓存等的jar包支持都是这里-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
         </dependency>
+        <!--Tomcat里面的servlet相关注解什么的-->
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-core</artifactId>
         </dependency>
 
-        <!--slf4j-->
+
+        <!--slf4j 日志记录的接口-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
         </dependency>
 
-        <!--junit-->
+        <!--junit 单元测试-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-
-
-
-
 
 
     <dependencyManagement>
@@ -84,7 +84,7 @@
                 <scope>import</scope>
             </dependency>
 
-
+            <!--这里放置全局的包。子包用的时候，无需带上版本。-->
             <!--提供对Java Bean对象进行属性操作的jar包，例如反射等操作时会使用-->
             <dependency>
                 <groupId>commons-beanutils</groupId>
@@ -116,24 +116,28 @@
                 <version>2.6.2</version>
             </dependency>
 
-            <!--时间解析-->
+            <!--时间解析，后续有计划使用jdk自带的来完成。之前自带的存在并发问题-->
             <dependency>
                 <groupId>joda-time</groupId>
                 <artifactId>joda-time</artifactId>
                 <version>2.7</version>
             </dependency>
+
+            <!--阿里的fastjson。用于处理JSON-->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>1.2.54</version>
             </dependency>
 
+            <!--servlet的包-->
             <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>servlet-api</artifactId>
-                <version>2.5</version>
+                <version>4.0.1</version>
                 <scope>provided</scope>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 </project>

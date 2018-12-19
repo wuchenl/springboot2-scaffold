@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.letters7.wuchen</groupId>
+        <artifactId>springboot2</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>springboot2-cache</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>springboot2-cache-support</module>
+        <module>springboot2-cache-caffeine</module>
+        <module>springboot2-cache-redis</module>
+    </modules>
+</project>

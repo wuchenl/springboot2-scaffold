@@ -84,6 +84,14 @@
                 <scope>import</scope>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.1.1.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <!--这里放置全局的包。子包用的时候，无需带上版本。-->
             <!--提供对Java Bean对象进行属性操作的jar包，例如反射等操作时会使用-->
             <dependency>

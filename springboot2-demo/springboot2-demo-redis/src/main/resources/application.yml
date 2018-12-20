@@ -1,0 +1,20 @@
+server:
+  port: 2001
+  servlet:
+    context-path: /redis
+spring:
+  cache:
+    type: redis
+    cache-names:
+      cacheUser: 60
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+    timeout: 3000

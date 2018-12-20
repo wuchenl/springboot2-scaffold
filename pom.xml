@@ -36,6 +36,7 @@
     <modules>
         <module>springboot2-utils</module>
         <module>springboot2-cache</module>
+        <module>springboot2-demo</module>
     </modules>
 
 
@@ -146,6 +147,12 @@
                 <scope>provided</scope>
             </dependency>
 
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.16.16</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

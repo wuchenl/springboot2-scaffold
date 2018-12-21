@@ -1,0 +1,2 @@
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.letters7.wuchen.springboot2.cache.CaffeineAutoConfiguration

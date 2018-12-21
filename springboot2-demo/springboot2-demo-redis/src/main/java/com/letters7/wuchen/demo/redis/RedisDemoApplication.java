@@ -9,7 +9,6 @@ import org.springframework.context.annotation.ComponentScan;
  * @date 2018/12/20.
  */
 @SpringBootApplication
-@ComponentScan(value = "com.letters7.wuchen")
 public class RedisDemoApplication {
     public static void main(String[] args) {
         SpringApplication.run(RedisDemoApplication.class, args);

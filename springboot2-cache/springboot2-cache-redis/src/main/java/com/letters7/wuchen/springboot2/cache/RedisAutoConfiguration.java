@@ -3,7 +3,6 @@ package com.letters7.wuchen.springboot2.cache;
 import com.google.common.collect.Maps;
 import com.letters7.wuchen.springboot2.Constants;
 import com.letters7.wuchen.springboot2.cache.support.FastJsonRedisSerializer;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cache.CacheManager;
@@ -15,14 +14,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.cache.RedisCacheWriter;
-import org.springframework.data.redis.connection.RedisConfiguration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.serializer.RedisSerializationContext;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.time.Duration;
-import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -34,35 +31,34 @@ import java.util.Map;
 @EnableCaching
 @Configuration
 @EnableConfigurationProperties(CacheConfig.class)
-@ComponentScan(Constants.foundationPackagePrefix+"cache")
+@ComponentScan(Constants.foundationPackagePrefix + "cache")
 public class RedisAutoConfiguration extends CachingConfigurerSupport {
     @Bean
     @ConditionalOnProperty(prefix = "spring.cache", name = "redis", matchIfMissing = true)
-    public CacheManager caffeineCacheManager(CacheConfig cacheConfig,RedisConnectionFactory redisConnectionFactory) {
+    public CacheManager caffeineCacheManager(CacheConfig cacheConfig, RedisConnectionFactory redisConnectionFactory) {
 
         RedisSerializer<String> stringSerializer = new StringRedisSerializer();
         FastJsonRedisSerializer redisSerializer = new FastJsonRedisSerializer();
 
-        Map<String,Long> cacheNames =cacheConfig.getCacheNames();
-        Map<String,RedisCacheConfiguration> cacheConfigs= Maps.newConcurrentMap();
-        Iterator<String> cacheNameIter = cacheNames.keySet().iterator();
-        while (cacheNameIter.hasNext()) {
-            String cacheName=cacheNameIter.next();
-            Long outTime=cacheNames.get(cacheName);
-            RedisCacheConfiguration configuration=RedisCacheConfiguration.defaultCacheConfig()
+        Map<String, Long> cacheNames = cacheConfig.getCacheNames();
+        Map<String, RedisCacheConfiguration> cacheConfigs = Maps.newConcurrentMap();
+        // 优化了Map的迭代。直接整体迭代
+        for (Map.Entry entry : cacheNames.entrySet()) {
+            String cacheName = String.valueOf(entry.getKey());
+            Long outTime = Long.valueOf(String.valueOf(entry.getValue()));
+            RedisCacheConfiguration configuration = RedisCacheConfiguration.defaultCacheConfig()
                     .entryTtl(Duration.ofSeconds(outTime))
                     .disableCachingNullValues()
                     .serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(stringSerializer))
                     .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(redisSerializer))
                     .prefixKeysWith(cacheName);
-            cacheConfigs.put(cacheName,configuration);
+            cacheConfigs.put(cacheName, configuration);
         }
-        RedisCacheWriter redisCacheWriter=RedisCacheWriter.nonLockingRedisCacheWriter(redisConnectionFactory);
-        RedisCacheConfiguration defaultConfig=RedisCacheConfiguration.defaultCacheConfig()
+        RedisCacheWriter redisCacheWriter = RedisCacheWriter.nonLockingRedisCacheWriter(redisConnectionFactory);
+        RedisCacheConfiguration defaultConfig = RedisCacheConfiguration.defaultCacheConfig()
                 .entryTtl(Duration.ofMinutes(30))
                 .serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(stringSerializer))
                 .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(redisSerializer));
-        RedisCacheManager redisCacheManager=new RedisCacheManager(redisCacheWriter,defaultConfig,cacheConfigs);
-        return redisCacheManager;
+        return new RedisCacheManager(redisCacheWriter, defaultConfig, cacheConfigs);
     }
 }

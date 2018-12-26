@@ -31,15 +31,27 @@
             <artifactId>ojdbc6</artifactId>
         </dependency>
 
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+        <!--引入缓存，作为临时存取-->
+        <dependency>
+            <groupId>com.letters7.wuchen</groupId>
+            <artifactId>springboot2-cache-caffeine</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!--引入工具包，增加效率-->
         <dependency>
             <groupId>com.letters7.wuchen</groupId>
             <artifactId>springboot2-utils</artifactId>
             <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
 

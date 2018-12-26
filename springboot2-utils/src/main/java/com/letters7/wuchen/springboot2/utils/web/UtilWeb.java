@@ -10,10 +10,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 和Web层相关的实用工具类
@@ -117,5 +114,18 @@ public class UtilWeb {
 			}
 		}
 		return sb.toString();
+	}
+
+	/**
+	 * 通过Spring获取当前会话的IP
+	 * @return IP
+	 */
+	public static String getCurrentIpBySpring(){
+		HttpServletRequest httpServletRequest = currentRequestInSpring();
+		if (Objects.nonNull(httpServletRequest)){
+			return getIpAddr(httpServletRequest);
+		}else {
+			return null;
+		}
 	}
 }

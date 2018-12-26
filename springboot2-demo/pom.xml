@@ -15,5 +15,6 @@
 
     <modules>
         <module>springboot2-demo-redis</module>
+        <module>springboot2-demo-test</module>
     </modules>
 </project>

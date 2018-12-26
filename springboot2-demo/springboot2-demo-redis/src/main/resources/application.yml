@@ -3,6 +3,8 @@ server:
   servlet:
     context-path: /redis
 spring:
+  application:
+    name: springboot2-demo-redis
   cache:
     type: redis
     cache-names:

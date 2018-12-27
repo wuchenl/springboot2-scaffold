@@ -1,7 +1,9 @@
 package com.letters7.wuchen.demo.generator.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.util.Objects;
@@ -12,6 +14,8 @@ import java.util.Objects;
 @Data
 @Builder
 @Accessors(chain = true)
+@AllArgsConstructor
+@NoArgsConstructor
 public class DatabaseConfig {
 
 	/**

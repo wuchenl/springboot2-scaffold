@@ -16,6 +16,8 @@ import java.util.List;
 @Data
 @Builder
 @Accessors(chain = true)
+@AllArgsConstructor
+@NoArgsConstructor
 public class GeneratorConfig {
 
 	/**

@@ -28,6 +28,7 @@ public class GeneratorTest {
         DatabaseConfig databaseConfig=DatabaseConfig.builder().build();
         databaseConfig.setDbType("MySQL_8").setEncoding(GeneratorConst.ENCODE_UTF8).setHost("kn.letters7.com").setPort("33308")
                 .setName("test").setUsername("wuchenl").setPassword("g20130817!").setSchema("ownKnowledge");
+
         Connection connection = UtilDataBase.getConnection(databaseConfig);
         Assert.assertNotNull(connection);
     }

@@ -39,4 +39,8 @@ public class GeneratorConst {
      * 获取表的字段类型的参数
      */
     public static final String DATABASE_TYPE_NAME="TYPE_NAME";
+    /**
+     * 缓存中的cache名称
+     */
+    public static final String CACHE_DATASOURCE="dataSources";
 }

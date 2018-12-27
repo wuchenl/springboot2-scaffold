@@ -60,10 +60,14 @@ public class DataSourceServiceImpl implements DataSourceService {
             if (Objects.nonNull(cache)) {
                 Cache.ValueWrapper valueWrapper = cache.get(host);
                 if (Objects.nonNull(valueWrapper)){
-                    String json=valueWrapper.get().toString();
-                    if (UtilString.isNotEmpty(json)){
-                        return JSON.parseObject(json,DatabaseConfig.class);
+                    Object object=valueWrapper.get();
+                    if (Objects.nonNull(object)){
+                        String json=String.valueOf(object);
+                        if (UtilString.isNotEmpty(json)){
+                            return JSON.parseObject(json,DatabaseConfig.class);
+                        }
                     }
+
                 }
             }
         }

@@ -9,8 +9,8 @@ package com.letters7.wuchen.demo.generator.model;
 public enum DBType {
     MySQL("mysql5.x", "jdbc:mysql://%s:%s/%s?useUnicode=true&useSSL=false&characterEncoding=%s", "com.mysql.jdbc.Driver"),
     MySQL_8("mysql8", "jdbc:mysql://%s:%s/%s?serverTimezone=UTC&useUnicode=true&useSSL=false&characterEncoding=%s", "com.mysql.cj.jdbc.Driver"),
-    Oracle("oracle", "jdbc:oracle:thin:@//%s:%s/%s", "oracle.jdbc.OracleDriver");
-
+    Oracle("oracle", "jdbc:oracle:thin:@//%s:%s/%s", "oracle.jdbc.OracleDriver"),
+    PostgreSQL("postgresql", "jdbc:postgresql://%s:%s/%s", "org.postgresql.Driver");
 
     DBType(String dbName, String dbUrl, String dbClass) {
         this.dbName = dbName;

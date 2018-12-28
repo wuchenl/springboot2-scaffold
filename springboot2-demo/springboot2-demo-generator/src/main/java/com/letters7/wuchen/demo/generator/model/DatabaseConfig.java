@@ -6,10 +6,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
+import javax.validation.constraints.NotEmpty;
 import java.util.Objects;
 
 /**
- * Created by Owen on 5/13/16.
+ * @author wuchenl
+ * @date 2018-12-27 19:03:13
+ * @desc 数据源配置相关BO
  */
 @Data
 @Builder
@@ -18,27 +21,25 @@ import java.util.Objects;
 @NoArgsConstructor
 public class DatabaseConfig {
 
-	/**
-	 * The primary key in the sqlite db
-	 */
-	private Integer id;
-
-	private String dbType;
-	/**
-	 * The name of the config
-	 */
-	private String name;
-
-	private String host;
-
-	private String port;
-
-	private String schema;
-
-	private String username;
-
-	private String password;
-
-	private String encoding;
+    @NotEmpty(message = "必须选择数据源类型")
+    private String dbType;
+    @NotEmpty(message = "必须填写该数据源配置名称")
+    private String name;
+    @NotEmpty(message = "必须填写该数据源地址")
+    private String host;
+    @NotEmpty(message = "必须填写该数据源端口")
+    private String port;
+    @NotEmpty(message = "必须填写该数据源数据库名")
+    private String schema;
+    @NotEmpty(message = "必须填写该数据源登录用户名")
+    private String username;
+    /**
+     * 密码 非必选
+     */
+    private String password;
+    /**
+     * 编码，默认utf8
+     */
+    private String encoding;
 
 }

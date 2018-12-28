@@ -37,6 +37,7 @@
         <module>springboot2-utils</module>
         <module>springboot2-cache</module>
         <module>springboot2-demo</module>
+        <module>springboot2-sdk</module>
     </modules>
 
 
@@ -164,6 +165,12 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>1.16.16</version>
+            </dependency>
+            <!--swagger ui注解相关。用于生成doc-->
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>1.5.21</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

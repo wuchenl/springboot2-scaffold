@@ -53,6 +53,12 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+        <!--基础返回类啥的-->
+        <dependency>
+            <groupId>com.letters7.wuchen</groupId>
+            <artifactId>springboot2-sdk</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 

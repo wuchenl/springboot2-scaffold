@@ -136,5 +136,12 @@ public class GeneratorConfig {
 	 * 自定义列名
 	 */
 	List<ModelFiledBO> modelFiledList;
-
+	/**
+	 * 数据源名称
+	 */
+	private String datasourceName;
+	/**
+	 * 是否使用Lombok注解生成model
+	 */
+	private Boolean useLombok;
 }

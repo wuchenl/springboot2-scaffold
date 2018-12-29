@@ -211,15 +211,15 @@ public class MybatisGeneratorBridge {
             if (DBType.MySQL.name().equals(dbType) || DBType.MySQL_8.name().equals(dbType)
 		            || DBType.PostgreSQL.name().equals(dbType)) {
                 PluginConfiguration pluginConfiguration = new PluginConfiguration();
-                pluginConfiguration.addProperty("type", "com.zzg.mybatis.generator.plugins.MySQLLimitPlugin");
-                pluginConfiguration.setConfigurationType("com.zzg.mybatis.generator.plugins.MySQLLimitPlugin");
+                pluginConfiguration.addProperty("type", "com.letters7.wuchen.demo.generator.support.plugins.MySQLLimitPlugin");
+                pluginConfiguration.setConfigurationType("com.letters7.wuchen.demo.generator.support.plugins.MySQLLimitPlugin");
                 context.addPluginConfiguration(pluginConfiguration);
             }
         }
         //for JSR310
         if (generatorConfig.isJsr310Support()) {
             JavaTypeResolverConfiguration javaTypeResolverConfiguration = new JavaTypeResolverConfiguration();
-            javaTypeResolverConfiguration.setConfigurationType("com.zzg.mybatis.generator.plugins.JavaTypeResolverJsr310Impl");
+            javaTypeResolverConfiguration.setConfigurationType("com.letters7.wuchen.demo.generator.support.plugins.JavaTypeResolverJsr310Impl");
             context.setJavaTypeResolverConfiguration(javaTypeResolverConfiguration);
         }
         //forUpdate 插件
@@ -227,8 +227,8 @@ public class MybatisGeneratorBridge {
             if (DBType.MySQL.name().equals(dbType)
                     || DBType.PostgreSQL.name().equals(dbType)) {
                 PluginConfiguration pluginConfiguration = new PluginConfiguration();
-                pluginConfiguration.addProperty("type", "com.zzg.mybatis.generator.plugins.MySQLForUpdatePlugin");
-                pluginConfiguration.setConfigurationType("com.zzg.mybatis.generator.plugins.MySQLForUpdatePlugin");
+                pluginConfiguration.addProperty("type", "com.letters7.wuchen.demo.generator.support.plugins.MySQLForUpdatePlugin");
+                pluginConfiguration.setConfigurationType("com.letters7.wuchen.demo.generator.support.plugins.MySQLForUpdatePlugin");
                 context.addPluginConfiguration(pluginConfiguration);
             }
         }
@@ -237,8 +237,8 @@ public class MybatisGeneratorBridge {
             if (DBType.MySQL.name().equals(dbType) || DBType.MySQL_8.name().equals(dbType)
                     || DBType.PostgreSQL.name().equals(dbType)) {
                 PluginConfiguration pluginConfiguration = new PluginConfiguration();
-                pluginConfiguration.addProperty("type", "com.zzg.mybatis.generator.plugins.RepositoryPlugin");
-                pluginConfiguration.setConfigurationType("com.zzg.mybatis.generator.plugins.RepositoryPlugin");
+                pluginConfiguration.addProperty("type", "com.letters7.wuchen.demo.generator.support.plugins.RepositoryPlugin");
+                pluginConfiguration.setConfigurationType("com.letters7.wuchen.demo.generator.support.plugins.RepositoryPlugin");
                 context.addPluginConfiguration(pluginConfiguration);
             }
         }
@@ -247,8 +247,8 @@ public class MybatisGeneratorBridge {
                     || DBType.PostgreSQL.name().equals(dbType)) {
                 PluginConfiguration pluginConfiguration = new PluginConfiguration();
 				pluginConfiguration.addProperty("useExample", String.valueOf(generatorConfig.isUseExample()));
-				pluginConfiguration.addProperty("type", "com.zzg.mybatis.generator.plugins.CommonDAOInterfacePlugin");
-                pluginConfiguration.setConfigurationType("com.zzg.mybatis.generator.plugins.CommonDAOInterfacePlugin");
+				pluginConfiguration.addProperty("type", "com.letters7.wuchen.demo.generator.support.plugins.CommonDAOInterfacePlugin");
+                pluginConfiguration.setConfigurationType("com.letters7.wuchen.demo.generator.support.plugins.CommonDAOInterfacePlugin");
                 context.addPluginConfiguration(pluginConfiguration);
             }
         }

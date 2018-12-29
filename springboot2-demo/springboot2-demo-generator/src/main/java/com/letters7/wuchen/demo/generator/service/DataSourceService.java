@@ -1,6 +1,9 @@
 package com.letters7.wuchen.demo.generator.service;
 
 import com.letters7.wuchen.demo.generator.model.DatabaseConfig;
+import com.letters7.wuchen.demo.generator.model.ModelFiledBO;
+
+import java.util.List;
 
 /**
  * @author wuchen
@@ -22,4 +25,19 @@ public interface DataSourceService {
      * @return 配置信息
      */
     DatabaseConfig getDataSource(String host);
+
+    /**
+     * 获取当前IP所对应的数据源的所有表
+     * @param host IP信息
+     * @return 对应的表名
+     */
+    List<String> getHostTables(String host);
+
+    /**
+     * 根据IP和表名获取对应表字段信息
+     * @param host IP信息
+     * @param tableName 对应的表名
+     * @return 字段信息
+     */
+    List<ModelFiledBO> getTableColumnsByName(String host,String tableName);
 }

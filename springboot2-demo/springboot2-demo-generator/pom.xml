@@ -31,11 +31,6 @@
             <artifactId>ojdbc6</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
         <!--引入缓存，作为临时存取-->
         <dependency>
             <groupId>com.letters7.wuchen</groupId>
@@ -48,17 +43,16 @@
             <artifactId>springboot2-utils</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.letters7.wuchen</groupId>
+            <artifactId>springboot2-web</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
-        <!--基础返回类啥的-->
-        <dependency>
-            <groupId>com.letters7.wuchen</groupId>
-            <artifactId>springboot2-sdk</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
+
     </dependencies>
 
 

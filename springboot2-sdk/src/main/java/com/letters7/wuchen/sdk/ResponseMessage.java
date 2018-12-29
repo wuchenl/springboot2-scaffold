@@ -17,7 +17,7 @@ public class ResponseMessage implements BaseBo {
     /**
      * 时间戳
      */
-    @ApiModelProperty(value = "时间戳",example = "156564561564")
+    @ApiModelProperty(value = "时间戳",example = "1546052704190")
     private Long timestamp;
     /**
      * 成功状态

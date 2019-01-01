@@ -141,6 +141,13 @@
                 <version>1.2.54</version>
             </dependency>
 
+            <!--zt-zip：压缩类库的特点就是方便、简易，消耗内存很少-->
+            <dependency>
+                <groupId>org.zeroturnaround</groupId>
+                <artifactId>zt-zip</artifactId>
+                <version>1.13</version>
+            </dependency>
+
             <!--servlet的包-->
             <dependency>
                 <groupId>javax.servlet</groupId>

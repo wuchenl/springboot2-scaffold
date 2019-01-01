@@ -9,6 +9,7 @@ import com.letters7.wuchen.sdk.ResponseMessage;
 import com.letters7.wuchen.springboot2.utils.exception.UtilException;
 import com.letters7.wuchen.springboot2.utils.string.UtilString;
 import com.letters7.wuchen.springboot2.utils.web.UtilWeb;
+import com.letters7.wuchen.springboot2.utils.zip.UtilZip;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.mybatis.generator.config.ColumnOverride;
@@ -39,7 +40,7 @@ public class GeneratorController {
     /**
      * 日志提供器
      */
-    private final static Logger log = LoggerFactory.getLogger(DataSourceController.class);
+    private final static Logger log = LoggerFactory.getLogger(GeneratorController.class);
 
     @Autowired
     private DataSourceService dataSourceService;
@@ -64,11 +65,10 @@ public class GeneratorController {
             file.mkdir();
             log.info("路径为:{}", file.getAbsolutePath());
         }
-
+        generatorConfig.setProjectFolder(file.getAbsolutePath());
         if (!checkDirs(generatorConfig)) {
             log.info("创建文件夹！");
         }
-        generatorConfig.setProjectFolder(file.getAbsolutePath());
         // 忽略的行数
         List<IgnoredColumn> ignoredColumns = Lists.newArrayList();
         // 重写的行数
@@ -81,6 +81,7 @@ public class GeneratorController {
         bridge.setColumnOverrides(columnOverrides);
         try {
             bridge.generate();
+            UtilZip.pack(generatorConfig.getProjectFolder(),UtilString.join(generatorConfig.getProjectFolder(),".zip"));
         } catch (Exception e) {
             log.error("生成配置文件出现异常:{}", UtilException.getBootMessage(e));
         }

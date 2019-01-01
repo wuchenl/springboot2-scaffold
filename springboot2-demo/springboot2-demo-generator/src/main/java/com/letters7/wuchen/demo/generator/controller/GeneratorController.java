@@ -65,10 +65,12 @@ public class GeneratorController {
             file.mkdir();
             log.info("路径为:{}", file.getAbsolutePath());
         }
+        // 设置默认值
         generatorConfig.setProjectFolder(file.getAbsolutePath());
         if (!checkDirs(generatorConfig)) {
             log.info("创建文件夹！");
         }
+
         // 忽略的行数
         List<IgnoredColumn> ignoredColumns = Lists.newArrayList();
         // 重写的行数
@@ -81,7 +83,7 @@ public class GeneratorController {
         bridge.setColumnOverrides(columnOverrides);
         try {
             bridge.generate();
-            UtilZip.pack(generatorConfig.getProjectFolder(),UtilString.join(generatorConfig.getProjectFolder(),".zip"));
+            UtilZip.pack(generatorConfig.getProjectFolder(), UtilString.join(generatorConfig.getProjectFolder(), ".zip"));
         } catch (Exception e) {
             log.error("生成配置文件出现异常:{}", UtilException.getBootMessage(e));
         }
@@ -92,7 +94,7 @@ public class GeneratorController {
     /**
      * 检查并创建不存在的文件夹
      *
-     * @return
+     * @return 操作是否成功
      */
     private boolean checkDirs(GeneratorConfig config) {
         List<String> dirs = new ArrayList<>();

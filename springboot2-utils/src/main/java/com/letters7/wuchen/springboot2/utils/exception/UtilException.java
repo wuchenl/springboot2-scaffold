@@ -39,7 +39,7 @@ public class UtilException {
 	
 	/**
 	 * 找出根异常消息
-	 * //只返回前100个字符
+	 * //只返回前300个字符
 	 */
 	public static String getBootMessage(Throwable ex) {
 		if(ex == null){
@@ -55,7 +55,7 @@ public class UtilException {
 				message =  ex.getMessage();
 			}
 		}
-		return UtilString.substring(message , 0 ,100);
+		return UtilString.substring(message , 0 ,300);
 	}
 	
 

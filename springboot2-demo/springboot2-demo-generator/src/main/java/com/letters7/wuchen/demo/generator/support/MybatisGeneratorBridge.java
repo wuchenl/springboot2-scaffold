@@ -72,10 +72,12 @@ public class MybatisGeneratorBridge {
 	    
         context.addProperty("javaFileEncoding", "UTF-8");
 		String dbType = selectedDatabaseConfig.getDbType();
+
+		// 去除了加装外部数据库驱动的步骤。因为maven 打包时以及打进去了。直接从classpath中加载即可
 //		String connectorLibPath = ConfigHelper.findConnectorLibPath(dbType);
-		String connectorLibPath =Class.forName(DBType.MySQL.getDbClass()).getProtectionDomain().getCodeSource().getLocation().getPath();
-	    log.info("connectorLibPath: {}", connectorLibPath);
-	    configuration.addClasspathEntry(connectorLibPath);
+//		String connectorLibPath =Class.forName(DBType.MySQL.getDbClass()).getProtectionDomain().getCodeSource().getLocation().getPath();
+//	    log.info("connectorLibPath: {}", connectorLibPath);
+//	    configuration.addClasspathEntry(connectorLibPath);
         // Table configuration
         TableConfiguration tableConfig = new TableConfiguration(context);
         tableConfig.setTableName(generatorConfig.getTableName());

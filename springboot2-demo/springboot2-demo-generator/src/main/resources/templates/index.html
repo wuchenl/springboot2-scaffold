@@ -1,0 +1,79 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Mybatis-Generator-Online在线生成插件</title>
+    <meta name="keywords" content="Mybatis-Generator,在线生成">
+    <meta name="description" content="Mybatis-Generator的在线生成工具。">
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min93e3.css" rel="stylesheet">
+
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
+    <link href="css/plugins/treeview/bootstrap-treeview.css" rel="stylesheet">
+</head>
+
+<body class="gray-bg">
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Mybatis-Generator-Online在线生成插件</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="#">主页</a>
+            </li>
+            <li>
+                <strong>包屑导航</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-sm-8">
+        <div class="title-action">
+            <a href="#" class="btn btn-primary">创建数据源</a>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <!--左侧边栏-->
+        <div class="col-sm-3">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>数据源信息</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div id="tree"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <tr th:each="item : ${dbType}">
+                           <td th:text="${item.getDbName()}"></td>
+                            <td th:text="${item.getDbClass()}"></td>
+                           <td th:text="${item.getDbUrl()}"></td>
+                        </tr>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/treeview/bootstrap-treeview.js"></script>
+<script src="js/generator.js"></script>
+</body>
+
+</html>

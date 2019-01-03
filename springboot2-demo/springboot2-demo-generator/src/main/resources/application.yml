@@ -8,7 +8,13 @@ spring:
   cache:
     type: caffeine
     cache-names:
-#      数据源放入缓存后保存30分钟
+      #      数据源放入缓存后保存30分钟
       dataSources: 1800
   profiles:
     active: dev
+  thymeleaf:
+    cache: false
+    mode: HTML
+    encoding: UTF-8
+    servlet:
+      content-type: text/html

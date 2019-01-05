@@ -36,7 +36,7 @@
     <modules>
         <module>springboot2-utils</module>
         <module>springboot2-cache</module>
-        <module>springboot2-demo</module>
+        <!--<module>springboot2-demo</module>-->
         <module>springboot2-sdk</module>
         <module>springboot2-web</module>
     </modules>

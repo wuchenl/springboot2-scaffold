@@ -6,7 +6,7 @@
 
     <groupId>com.letters7.wuchen</groupId>
     <artifactId>springboot2</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>spring boot2-project</name>

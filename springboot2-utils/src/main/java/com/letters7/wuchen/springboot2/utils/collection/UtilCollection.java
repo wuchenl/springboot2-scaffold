@@ -57,10 +57,12 @@ public class UtilCollection {
     }
 
 
-
-
     /**
-     * M排序
+     * Map排序
+     * @param data 数据
+     * @param <K> key
+     * @param <V> value
+     * @return 排序后的值
      */
     public static <K extends Comparable, V> Map<K, V> sortMapByKey(Map<K, V> data) {
         Map<K, V> data_ = new LinkedHashMap<>();
@@ -80,11 +82,10 @@ public class UtilCollection {
     }
 
 
-
-
-
     /**
      * SET转换为List
+     * @param itemSet set
+     * @return list
      */
     public static List set2List(Set itemSet) {
         if (itemSet == null) {
@@ -121,6 +122,8 @@ public class UtilCollection {
 
     /**
      * List转换为SET
+     * @param itemList 待转换的list
+     * @return 转换后的set
      */
     public static Set list2Set(List itemList) {
         if (itemList == null) {
@@ -154,9 +157,10 @@ public class UtilCollection {
     }
 
 
-
     /**
      * 集合连接为字符串
+     * @param objs 待追加的字符串
+     * @return 连接后的字符串
      */
     public static String joinArray(Object... objs){
         Collection collection = Arrays.asList(objs);
@@ -185,9 +189,10 @@ public class UtilCollection {
     }
 
 
-
     /**
      * 字符串拆分成集合
+     * @param temp 待拆分的字符串
+     * @return 拆分的List
      */
     public static List<String> splitString2List(String temp) {
         return splitString2List(temp, ',');
@@ -226,6 +231,10 @@ public class UtilCollection {
 
     /**
      * 提取集合中的对象的一个属性(通过Getter函数), 组合成由分割符分隔的字符串.
+     * @param collection 集合对象
+     * @param propertyName 属性名
+     * @param separator 分隔符
+     * @return 字符串
      */
     public static String extractToString(final Collection collection, final String propertyName, final String separator) {
         List list = extractToList(collection, propertyName);
@@ -287,12 +296,12 @@ public class UtilCollection {
     }
 
 
-
-
-
-
     /**
      * 返回第一个列表中比第二个多出来的元素
+     * @param list1 第一个列表
+     * @param list2 第二个列表
+     * @param <T> 任意对象
+     * @return 多余的元素
      */
     public static <T> List<T> getLeftDiff(List<T> list1, List<T> list2) {
         if (isEmpty(list2)) {

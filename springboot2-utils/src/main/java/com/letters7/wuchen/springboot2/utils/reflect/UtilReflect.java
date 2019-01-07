@@ -614,7 +614,7 @@ public final class UtilReflect {
 
     /**
      * 方法描述为易读的字符串
-     * getByUserId name. java.lang.Object[][].class => "java.lang.Object[][]"
+     * getByUserId name. java.lang.Object[][].class == "java.lang.Object[][]"
      */
     public static String descClass(Class<?> c) {
         if (c.isArray()) {

@@ -22,8 +22,8 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author wuchen
  * @version 0.1
- * @date 2018/12/13 14:41
- * @use
+ *  2018/12/13 14:41
+ *
  */
 @EnableCaching
 @Configuration

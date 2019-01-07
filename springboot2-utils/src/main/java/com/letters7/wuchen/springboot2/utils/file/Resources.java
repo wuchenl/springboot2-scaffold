@@ -49,7 +49,6 @@ public class Resources {
      *
      * @param resource The resource to find
      * @return The resource
-     * @throws IOException If the resource cannot be found or read
      */
     public static URL getResourceURL(String resource){
         return classLoaderWrapper.getResourceAsURL(resource);
@@ -65,7 +64,9 @@ public class Resources {
      */
     public static URL getResourceURL(ClassLoader loader, String resource) throws IOException {
         URL url = classLoaderWrapper.getResourceAsURL(resource, loader);
-        if (url == null) throw new IOException("Could not find resource " + resource);
+        if (url == null) {
+            throw new IOException("Could not find resource " + resource);
+        }
         return url;
     }
 

@@ -39,7 +39,7 @@ public class UtilClass {
      * @param method     要获取的方法
      * @param annotation 注解类型
      * @param <T>        注解类型泛型
-     * @return
+     * @return 对应的注解
      */
     public static <T extends Annotation> T getAnnotation(Method method, Class<T> annotation) {
         T ann = method.getAnnotation(annotation);
@@ -101,6 +101,7 @@ public class UtilClass {
                 .findFirst()
                 .orElse((Class) Object.class);
     }
+
     /**
      * 获取一个类的第一个泛型的类型
      *
@@ -142,11 +143,11 @@ public class UtilClass {
 
     /**
      * 将对象转为指定的类型
-     * <br/>
      * 支持日期，数字，boolean类型转换
      *
      * @param value 需要转换的值
      * @param type  目标类型
+     * @param <T>   任意
      * @return 转换后的值
      */
     public static final <T> T cast(Object value, Class<T> type) {

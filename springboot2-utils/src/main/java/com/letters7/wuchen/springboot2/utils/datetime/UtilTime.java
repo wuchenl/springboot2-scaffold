@@ -101,7 +101,7 @@ public class UtilTime {
     }
 
     /**
-     * 使用一个字符串构造时间<br/>
+     * 使用一个字符串构造时间
      * Time time = new Time("14:22:23");
      * @param time      字符串格式的时间，默认采用“:”作为分隔符
      */
@@ -138,7 +138,7 @@ public class UtilTime {
     }
 
     /**
-     * 使用一个字符串构造时间，指定分隔符<br/>
+     * 使用一个字符串构造时间，指定分隔符
      * Time time = new Time("14-22-23", "-");
      * @param time      字符串格式的时间
      */

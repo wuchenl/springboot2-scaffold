@@ -34,6 +34,8 @@ public final class UtilClassLoader {
 
     /**
      * 获取ClassLoader下的文件流，一般用于读取配置文件
+     * @param filePath 文件路径
+     * @return 对应的输入流
      */
     public static InputStream getResourceAsStream(String filePath) {
         ClassLoader classLoader = UtilClassLoader.getClassLoader();
@@ -82,18 +84,8 @@ public final class UtilClassLoader {
 
 
     /**
-     * Return the dsl ClassLoader to use: typically the thread context
-     * ClassLoader, if available; the ClassLoader that loaded the ClassUtils
-     * class will be used as fallback.
-     * <p/>
-     * Call this method if you intend to use the thread context ClassLoader in a
-     * scenario where you absolutely need a non-null ClassLoader reference: for
-     * example, for class path resource loading (but not necessarily for
-     * <code>Class.forName</code>, which accepts a <code>null</code> ClassLoader
-     * reference as well).
-     *
-     * @return the dsl ClassLoader (never <code>null</code>)
-     * @see Thread#getContextClassLoader()
+     *  获取类加载器
+     * @return 对应的加载器
      */
     public static ClassLoader getClassLoader() {
         return getClassLoader(UtilClassLoader.class);

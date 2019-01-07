@@ -25,8 +25,8 @@ import java.util.Map;
 /**
  * @author wuchen
  * @version 0.1
- * @date 2018/12/20 17:08
- * @use
+ *  2018/12/20 17:08
+ *
  */
 @EnableCaching
 @Configuration

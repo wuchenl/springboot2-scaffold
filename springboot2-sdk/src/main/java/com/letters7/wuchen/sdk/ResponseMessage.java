@@ -9,8 +9,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * @author wuchenl
- * @date 2018/12/28.
- * @desc 通用返回类
+ *  2018/12/28.
+ *  通用返回类
  */
 @Getter
 public class ResponseMessage implements BaseBo {

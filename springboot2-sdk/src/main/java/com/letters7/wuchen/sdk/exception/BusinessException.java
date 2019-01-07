@@ -5,8 +5,8 @@ import com.letters7.wuchen.springboot2.utils.exception.UtilException;
 /**
  * @author wuchen
  * @version 0.1
- * @date 2018/12/29 10:13
- * @desc 表明这是一个业务异常
+ *  2018/12/29 10:13
+ *  表明这是一个业务异常
  */
 public class BusinessException extends RuntimeException {
 

@@ -118,6 +118,7 @@ public class UtilDate {
 
     /**
      * 获取毫秒数据的字符串
+     * @return 字符串
      */
     public static String getMillisecondAsString() {
         return DateTime.now().toString("yyyyMMddHHmmssSSS");
@@ -231,8 +232,8 @@ public class UtilDate {
     /**
      * 转换为时间（天,时:分:秒.毫秒）
      *
-     * @param timeMillis
-     * @return
+     * @param timeMillis 时间戳
+     * @return 转换后的时间
      */
     public static String formatTimeMillis(long timeMillis) {
         long day = timeMillis / (24 * 60 * 60 * 1000);
@@ -281,8 +282,12 @@ public class UtilDate {
 
 
     //================================日期之间的间隔================================
+
     /**
      * 判断当前时间是否在开始和结束日期区间之间
+     * @param startDate 开始时间
+     * @param endDate 结束时间
+     * @return 是否在两个时间之间
      */
     public static boolean isBetweenDateRange(String startDate, String endDate) {
         String now = UtilDate.formatCurrentDateTime();
@@ -319,6 +324,9 @@ public class UtilDate {
 
     /**
      * 根据所给的起止时间来计算间隔的月数
+     * @param startDate 开始时间
+     * @param endDate 结束时间
+     * @return 相差的月数
      */
     public static int getIntervalMonths(Date startDate, Date endDate) {
         Calendar startCal = Calendar.getInstance();
@@ -335,6 +343,9 @@ public class UtilDate {
 
     /**
      * 根据所给的起止时间来计算间隔的天数
+     * @param startDate 开始时间
+     * @param endDate 结束时间
+     * @return 相差的天数
      */
     public static int getIntervalDays(Date startDate, Date endDate) {
         if (startDate == null || endDate == null) {
@@ -356,8 +367,8 @@ public class UtilDate {
     /**
      * 获取过去的天数
      *
-     * @param date
-     * @return
+     * @param date 时间
+     * @return 天数
      */
     public static long pastDays(Date date) {
         long t = System.currentTimeMillis() - date.getTime();
@@ -367,8 +378,8 @@ public class UtilDate {
     /**
      * 获取过去的小时
      *
-     * @param date
-     * @return
+     * @param date 时间
+     * @return 小时
      */
     public static long pastHour(Date date) {
         long t = System.currentTimeMillis() - date.getTime();
@@ -378,8 +389,8 @@ public class UtilDate {
     /**
      * 获取过去的分钟
      *
-     * @param date
-     * @return
+     * @param date 时间
+     * @return 分钟数
      */
     public static long pastMinutes(Date date) {
         long t = System.currentTimeMillis()  - date.getTime();
@@ -389,6 +400,9 @@ public class UtilDate {
 
     /**
      * 获取多少天之前的日期
+     * @param datestr 时间
+     * @param dayNum 多少天
+     * @return 多少天之前的日期
      */
     public static String beforeDateAsFormat(String datestr, int dayNum) {
         if (UtilString.isEmpty(datestr)) {
@@ -417,6 +431,9 @@ public class UtilDate {
 
     /**
      * 获取多少天之后的日期
+     * @param datestr 时间
+     * @param dayNum 天数
+     * @return 多少天后的日期
      */
     public static String afterDateAsFormat(String datestr, int dayNum) {
         if (UtilString.isEmpty(datestr)) {
@@ -445,6 +462,9 @@ public class UtilDate {
 
     /**
      * 获取多少月之前的日期
+     * @param datestr 时间
+     * @param monthNum 月数
+     * @return 对应日期
      */
     public static String beforeMonthAsFormat(String datestr, int monthNum) {
         if (UtilString.isEmpty(datestr)) {
@@ -473,6 +493,9 @@ public class UtilDate {
 
     /**
      * 获取多少月之后的日期
+     * @param datestr 时间
+     * @param monthNum 月数
+     * @return 对应日期
      */
     public static String afterMonthAsFormat(String datestr, int monthNum) {
         if (UtilString.isEmpty(datestr)) {
@@ -500,7 +523,10 @@ public class UtilDate {
 
 
     /**
-     * 获取多少年之前的日期
+     *  获取多少年之前的日期
+     * @param datestr 对应时间
+     * @param yearNum 对应年
+     * @return 对应的日期
      */
     public static String beforeYearAsFormat(String datestr, int yearNum) {
         if (UtilString.isEmpty(datestr)) {
@@ -529,6 +555,9 @@ public class UtilDate {
 
     /**
      * 获取多少年之前的日期
+     * @param datestr 对应时间
+     * @param yearNum 对应年
+     * @return 对应的日期
      */
     public static String afterYearAsFormat(String datestr, int yearNum) {
         if (UtilString.isEmpty(datestr)) {
@@ -561,8 +590,11 @@ public class UtilDate {
 
 
     //===========================日期的工具方法=========================
+
     /**
      * 根据日期获取星期
+     * @param strdate 对应日期
+     * @return 对应星期
      */
     public static String getWeekDayByDate(String strdate) {
         final String[] dayNames = {"星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"};
@@ -577,6 +609,9 @@ public class UtilDate {
 
     /**
      * 获取指定年份和月份对应的天数
+     * @param year 年
+     * @param month 月
+     * @return 天数
      */
     public static int getDaysInMonth(int year, int month) {
         if ((month == 1) || (month == 3) || (month == 5) || (month == 7) || (month == 8) || (month == 10)
@@ -592,8 +627,11 @@ public class UtilDate {
             }
         }
     }
+
     /**
      * 根据生日取年龄
+     * @param birthDayStr 生日
+     * @return 年龄
      */
     public static String getAge(String birthDayStr) {
         if (UtilString.isBlank(birthDayStr)) {
@@ -639,8 +677,11 @@ public class UtilDate {
 
 
     //===============================生成日期范围=============================
+
     /**
      * 根据输入的日期返回带上时间串的范围
+     * @param inputDateFormat 时间
+     * @return 对应的时间串
      */
     public static Date[] buildNotEmptyDateTimeRange(String inputDateFormat) {
         if(UtilString.isEmpty(inputDateFormat)){
@@ -655,6 +696,9 @@ public class UtilDate {
 
     /**
      * 根据输入的日期返回带上时间串的范围
+     * @param inputDateStart 开始时间
+     * @param inputDateEnd 结束时间
+     * @return 范围
      */
     public static Date[] buildNotEmptyDateTimeRange(String inputDateStart , String inputDateEnd) {
         if(UtilString.isEmpty(inputDateStart) || UtilString.isEmpty(inputDateEnd)){

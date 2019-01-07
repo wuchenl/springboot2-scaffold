@@ -16,8 +16,8 @@ import java.util.zip.ZipOutputStream;
 
 /**
  * @author wuchenl
- * @date 2018/12/31.
- * @desc 压缩文件工具类
+ *  2018/12/31.
+ *  压缩文件工具类
  */
 public class UtilZip {
     /**

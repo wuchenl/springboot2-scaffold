@@ -9,8 +9,7 @@ import java.util.Map;
 /**
  * @author wuchen
  * @version 0.1
- * @date 2018/12/13 14:36
- * @use
+ *  2018/12/13 14:36
  */
 @ConfigurationProperties(prefix = "spring.cache")
 public class CacheConfig {

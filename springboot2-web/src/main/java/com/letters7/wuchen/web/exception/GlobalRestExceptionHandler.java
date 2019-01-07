@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @author wuchen
  * @version 0.1
- * @date 2018/12/29 10:06
- * @desc 针对RestController 全局异常处理
+ *  2018/12/29 10:06
+ *  针对RestController 全局异常处理
  */
 @ControllerAdvice(annotations = {RestController.class, ResponseBody.class})
 public class GlobalRestExceptionHandler {

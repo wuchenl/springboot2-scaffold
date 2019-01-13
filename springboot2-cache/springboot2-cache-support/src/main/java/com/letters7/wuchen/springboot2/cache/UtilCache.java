@@ -26,7 +26,7 @@ public class UtilCache {
      * @param cacheKey  key
      * @return 对应数据
      */
-    private String getDataFromCache(@NonNull String cacheName, @NonNull String cacheKey) {
+    public static String getDataFromCache(@NonNull String cacheName, @NonNull String cacheKey) {
         // 拿取缓存
         CacheManager manager = CacheManagerHolder.getManager();
         if (Objects.nonNull(manager)) {

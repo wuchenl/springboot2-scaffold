@@ -1,4 +1,4 @@
-package com.letters7.wuchen.sdk.exception;
+package com.letters7.wuchen.springboot2.sdk.exception;
 
 import com.letters7.wuchen.springboot2.utils.exception.UtilException;
 

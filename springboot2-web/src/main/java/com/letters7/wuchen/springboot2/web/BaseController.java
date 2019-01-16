@@ -1,4 +1,4 @@
-package com.letters7.wuchen.web;
+package com.letters7.wuchen.springboot2.web;
 
 /**
  * @author wuchen

@@ -1,4 +1,4 @@
-package com.letters7.wuchen.sdk.model;
+package com.letters7.wuchen.springboot2.sdk.model;
 
 import java.io.Serializable;
 

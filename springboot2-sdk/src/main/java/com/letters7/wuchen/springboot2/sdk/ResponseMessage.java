@@ -1,6 +1,6 @@
-package com.letters7.wuchen.sdk;
+package com.letters7.wuchen.springboot2.sdk;
 
-import com.letters7.wuchen.sdk.model.BaseBo;
+import com.letters7.wuchen.springboot2.sdk.model.BaseBo;
 import com.letters7.wuchen.springboot2.utils.exception.ExceptionHelper;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;

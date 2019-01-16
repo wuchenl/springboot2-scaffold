@@ -1,10 +1,11 @@
-package com.letters7.wuchen.web.exception;
+package com.letters7.wuchen.springboot2.web.exception;
 
-import com.letters7.wuchen.sdk.ResponseMessage;
-import com.letters7.wuchen.sdk.exception.BusinessException;
+import com.letters7.wuchen.springboot2.sdk.ResponseMessage;
+import com.letters7.wuchen.springboot2.sdk.exception.BusinessException;
 import com.letters7.wuchen.springboot2.utils.exception.UtilException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.annotation.Order;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  *  针对RestController 全局异常处理
  */
 @ControllerAdvice(annotations = {RestController.class, ResponseBody.class})
+@Order(9)
 public class GlobalRestExceptionHandler {
 
     private static final Logger log = LoggerFactory.getLogger(GlobalRestExceptionHandler.class);
